@@ -21,7 +21,7 @@ const ProfileWrapper = styled.div`
   margin: auto;
 
   @media ${device.mobile} {
-    width: 100%;
+    width: 95%;
   }
 `;
 
