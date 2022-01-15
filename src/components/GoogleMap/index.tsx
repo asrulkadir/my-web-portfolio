@@ -18,6 +18,8 @@ function MapComponent() {
     margin: 'auto',
   };
 
+  console.log(process.env.REACT_APP_GMAPS_API);
+
   return (
     <>
       <LoadScript googleMapsApiKey={`${process.env.REACT_APP_GMAPS_API}`}>
