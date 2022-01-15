@@ -5,10 +5,15 @@ import AnimatedPage from '../../components/Animated';
 import Layout from '../../components/Layout';
 import { Education, Title } from '../profile';
 import { dataSkills } from '../../utils/dataSkill';
+import { device } from '../../utils/responsive';
 
 const ResumeWrapper = styled.div`
   width: 80%;
   margin: auto;
+
+  @media ${device.mobile} {
+    width: 95%;
+  }
 `;
 
 const Skills = styled.div`
@@ -23,6 +28,14 @@ const Skills = styled.div`
     display: flex;
     flex-direction: column;
     height: 12.5rem;
+
+    @media ${device.tablet} {
+      width: 29%;
+    }
+
+    @media ${device.mobile} {
+      width: 40%;
+    }
 
     img {
       display: block;

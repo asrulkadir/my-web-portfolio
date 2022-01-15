@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FaInstagram, FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { ProfilePicture } from '../../assets';
 import Nav from '../Nav';
+import { device } from '../../utils/responsive';
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -12,6 +13,11 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media ${device.mobile} {
+    width: 95vw;
+    min-height: 95vh;
+  }
 `;
 
 const Content = styled.div`
@@ -19,6 +25,14 @@ const Content = styled.div`
   width: 90vw;
   height: 80vh;
   display: flex;
+
+  @media ${device.mobile} {
+    flex-direction: column;
+    width: 95vw;
+    min-height: 95vh;
+    flex: 1;
+    margin-top: 0.5rem;
+  }
 `;
 
 const ImgDiv = styled.div`
@@ -28,11 +42,12 @@ const ImgDiv = styled.div`
   flex-direction: column;
   color: white;
 
-  .name {
-    position: absolute;
-    bottom: 17.5vh;
-    left: 6vw;
-    display: inline;
+  @media ${device.tablet} {
+  }
+
+  @media ${device.mobile} {
+    width: 100%;
+    height: 50vh;
   }
 
   img {
@@ -40,16 +55,43 @@ const ImgDiv = styled.div`
     margin: auto;
     width: 90%;
     height: 90%;
+
+    @media ${device.tablet} {
+      height: 60%;
+      margin: 5vh auto 40vh;
+    }
+
+    @media ${device.mobile} {
+      height: 85%;
+      width: 80%;
+    }
   }
 
   div {
     display: flex;
     height: 10%;
     justify-content: space-around;
-  }
 
-  a {
-    color: white;
+    a {
+      color: white;
+    }
+
+    @media ${device.mobile} {
+      margin: 0 0 1rem;
+    }
+  }
+`;
+
+const Name = styled.div`
+  position: absolute;
+  bottom: 18vh;
+  left: 6vw;
+  display: flex;
+  flex-direction: column;
+
+  @media ${device.mobile} {
+    top: 32.5vh;
+    left: 58vw;
   }
 `;
 
@@ -57,6 +99,10 @@ const Info = styled.div`
   width: 70%;
   display: flex;
   flex-direction: column;
+
+  @media ${device.mobile} {
+    width: 100%;
+  }
 `;
 
 const Information = styled.div`
@@ -73,10 +119,10 @@ const Layout = ({ children }: any) => {
       <Content>
         <ImgDiv>
           <img src={ProfilePicture} alt="" />
-          <div className="name">
+          <Name>
             <h3>ASRUL KADIR</h3>
             <p>Web Programmer</p>
-          </div>
+          </Name>
           <div>
             <a
               href="https://github.com/asrulkadir"

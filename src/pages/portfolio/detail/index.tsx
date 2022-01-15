@@ -1,12 +1,10 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { dataPortfolio } from '../../../utils/dataPortfolio';
+import { device } from '../../../utils/responsive';
+import NotFound from '../../404';
 import { Title } from '../../profile';
-
-interface CustomState {
-  id?: number;
-}
 
 const Container = styled.div`
   width: 100%;
@@ -22,6 +20,15 @@ const Wrapper = styled.div`
   background: white;
   color: brown;
   margin: 2rem auto;
+
+  @media ${device.tablet} {
+    width: 90vw;
+  }
+
+  @media ${device.mobile} {
+    width: 95vw;
+    margin: 1rem auto;
+  }
 
   hr {
     border: 1px solid blue;
@@ -47,9 +54,27 @@ const Technology = styled.div`
     width: 20%;
     height: 10rem;
 
+    @media ${device.tablet} {
+      width: 25%;
+    }
+
+    @media ${device.mobile} {
+      width: 45%;
+      height: 7.5rem;
+      margin: 0.5rem 0;
+    }
+
     img {
       width: 100%;
       height: 80%;
+
+      @media ${device.tablet} {
+        height: 50%;
+      }
+
+      @media ${device.mobile} {
+        height: 75%;
+      }
     }
 
     p {
@@ -77,6 +102,15 @@ const View = styled.a`
   font-weight: bold;
   padding: 0.5rem;
 
+  @media ${device.tablet} {
+    margin: 0.25rem auto;
+  }
+
+  @media ${device.mobile} {
+    width: 50%;
+    margin: 0 auto;
+  }
+
   &:hover {
     background: brown;
     color: white;
@@ -101,55 +135,66 @@ const Back = styled.button`
 `;
 
 const DetailPortfolio = () => {
-  const location = useLocation();
-  const state = location.state as CustomState;
+  const [showPortfolio, setShowPortfolio] = useState<boolean>(true);
   const navigate = useNavigate();
+  const { id }: any = useParams();
+
+  useEffect(() => {
+    setShowPortfolio(
+      dataPortfolio.some((li) => {
+        return li.id === parseInt(id);
+      })
+    );
+  }, [id, navigate]);
 
   return (
     <Container>
       <Wrapper>
-        {state
-          ? dataPortfolio.map((li, index) => {
-              if (li.id === state.id) {
-                return (
-                  <div key={index}>
-                    <Title>
-                      <h3>{li.title.toUpperCase()}</h3>
-                    </Title>
-                    <img src={li.image} alt={li.title} />
+        {showPortfolio ? (
+          dataPortfolio.map((li, index) => {
+            if (li.id === parseInt(id)) {
+              return (
+                <div key={index}>
+                  <Title>
+                    <h3>{li.title.toUpperCase()}</h3>
+                  </Title>
+                  <img src={li.image} alt={li.title} />
 
-                    <Title>
-                      <h3>Built With</h3>
-                    </Title>
-                    <Technology>
-                      {li.technologies.map((tech, index) => {
-                        return (
-                          <div key={index}>
-                            <img src={tech.image} alt={tech.name} />
-                            <p>
-                              <a
-                                href={tech.link}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                {tech.name}
-                              </a>
-                            </p>
-                          </div>
-                        );
-                      })}
-                    </Technology>
+                  <Title>
+                    <h3>Built With</h3>
+                  </Title>
+                  <Technology>
+                    {li.technologies.map((tech, index) => {
+                      return (
+                        <div key={index}>
+                          <img src={tech.image} alt={tech.name} />
+                          <p>
+                            <a
+                              href={tech.link}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              {tech.name}
+                            </a>
+                          </p>
+                        </div>
+                      );
+                    })}
+                  </Technology>
 
-                    <View href={li.site} target="_blank">
-                      View Portfolio
-                    </View>
-                    <Back onClick={() => navigate('/portfolio')}>Back</Back>
-                  </div>
-                );
-              }
+                  <View href={li.site} target="_blank">
+                    View Portfolio
+                  </View>
+                  <Back onClick={() => navigate(-1)}>Back</Back>
+                </div>
+              );
+            } else {
               return null;
-            })
-          : null}
+            }
+          })
+        ) : (
+          <NotFound />
+        )}
       </Wrapper>
     </Container>
   );

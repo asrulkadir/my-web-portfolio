@@ -1,6 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
+import NotFound from './pages/404';
 import Contact from './pages/contact';
 import Home from './pages/home';
 import Portfolio from './pages/portfolio';
@@ -17,8 +18,10 @@ function App() {
         <Route path="profile" element={<Profile />} />
         <Route path="resume" element={<Resume />} />
         <Route path="portfolio" element={<Portfolio />} />
-        <Route path="portfolio/detail" element={<DetailPortfolio />} />
+        <Route path="portfolio/:id" element={<DetailPortfolio />} />
         <Route path="contact" element={<Contact />} />
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
   );

@@ -3,10 +3,15 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import AnimatedPage from '../../components/Animated';
 import Layout from '../../components/Layout';
+import { device } from '../../utils/responsive';
 
 const HomeWrapper = styled.div`
   width: 80%;
   margin: auto;
+
+  @media ${device.mobile} {
+    width: 95%;
+  }
 
   h3,
   h4,

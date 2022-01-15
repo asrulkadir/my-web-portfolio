@@ -14,10 +14,15 @@ import { IoMdFootball } from 'react-icons/io';
 import styled from 'styled-components';
 import AnimatedPage from '../../components/Animated';
 import Layout from '../../components/Layout';
+import { device } from '../../utils/responsive';
 
 const ProfileWrapper = styled.div`
   width: 80%;
   margin: auto;
+
+  @media ${device.mobile} {
+    width: 100%;
+  }
 `;
 
 export const Title = styled.div`
@@ -29,6 +34,14 @@ export const Title = styled.div`
     text-align: center;
     padding-bottom: 1rem;
   }
+
+  @media ${device.tablet} {
+    width: 40%;
+  }
+
+  @media ${device.mobile} {
+    width: 50%;
+  }
 `;
 
 const About = styled.div`
@@ -36,9 +49,21 @@ const About = styled.div`
   width: 80%;
   margin: auto;
 
+  @media ${device.mobile} {
+    width: 95%;
+  }
+
   .key {
     font-weight: bold;
     width: 50%;
+
+    @media ${device.tablet} {
+      width: 40%;
+    }
+
+    @media ${device.mobile} {
+      width: 35%;
+    }
 
     p {
       line-height: 2rem;
@@ -48,10 +73,22 @@ const About = styled.div`
   .value {
     width: 50%;
 
+    @media ${device.tablet} {
+      width: 60%;
+    }
+
+    @media ${device.mobile} {
+      width: 65%;
+    }
+
     p {
       text-align: end;
       line-height: 2rem;
     }
+  }
+
+  @media ${device.tablet} {
+    width: 100%;
   }
 `;
 
@@ -117,9 +154,25 @@ const Hobbies = styled.div`
     display: flex;
     justify-content: space-around;
 
+    @media ${device.mobile} {
+      flex-wrap: wrap;
+    }
+
     div {
       width: 10%;
       margin: 1rem 0;
+
+      @media ${device.tablet} {
+        width: 30%;
+      }
+
+      @media ${device.mobile} {
+        width: 30%;
+      }
+
+      h3 {
+        text-align: center;
+      }
     }
 
     p {

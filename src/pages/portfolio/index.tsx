@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import AnimatedPage from '../../components/Animated';
 import Layout from '../../components/Layout';
 import { dataPortfolio } from '../../utils/dataPortfolio';
+import { device } from '../../utils/responsive';
 import { Title } from '../profile';
 
 const PortfolioWrapper = styled.div`
@@ -15,6 +16,14 @@ const PortfolioDiv = styled.div`
   display: grid;
   grid-template-columns: 33% 33% 33%;
 
+  @media ${device.tablet} {
+    grid-template-columns: 50% 50%;
+  }
+
+  @media ${device.mobile} {
+    grid-template-columns: 100%;
+  }
+
   .port {
     width: 100%;
     border: 1px solid brown;
@@ -24,6 +33,10 @@ const PortfolioDiv = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media ${device.tablet} {
+      height: 10vh;
+    }
 
     img {
       width: 100%;
@@ -75,7 +88,7 @@ const Portfolio = () => {
                   className="port"
                   onMouseOver={() => handleMouseOver(index + 1)}
                   onMouseLeave={() => handleMouseLeave()}
-                  onClick={() => navigate('detail', { state: { id: li.id } })}
+                  onClick={() => navigate(`${li.id}`)}
                 >
                   {hover === index + 1 ? (
                     <h4>{li.title}</h4>
