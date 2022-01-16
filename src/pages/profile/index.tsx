@@ -48,48 +48,21 @@ const About = styled.div`
   display: flex;
   width: 80%;
   margin: auto;
+  flex-direction: column;
 
   @media ${device.mobile} {
     width: 95%;
   }
 
-  .key {
-    font-weight: bold;
-    width: 50%;
-
-    @media ${device.tablet} {
-      width: 40%;
-    }
-
-    @media ${device.mobile} {
-      width: 35%;
-    }
-
-    p {
-      line-height: 2rem;
-    }
-  }
-
-  .value {
-    width: 50%;
-
-    @media ${device.tablet} {
-      width: 60%;
-    }
-
-    @media ${device.mobile} {
-      width: 65%;
-    }
-
-    p {
-      text-align: end;
-      line-height: 2rem;
-    }
-  }
-
   @media ${device.tablet} {
-    width: 100%;
+    width: 95%;
   }
+`;
+
+const ItemAbout = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
 `;
 
 export const Education = styled.div`
@@ -190,34 +163,42 @@ const Profile = () => {
             <h3>ABOUT ME</h3>
           </Title>
           <About>
-            <div className="key">
+            <ItemAbout>
               <p>
                 <FaUser /> Name
               </p>
+              <p>Asrul Kadir</p>
+            </ItemAbout>
+            <ItemAbout>
               <p>
                 <FaCalendar /> Date of Birth
               </p>
+              <p>April 19th 1998</p>
+            </ItemAbout>
+            <ItemAbout>
               <p>
                 <FaPhone /> Phone
               </p>
+              <p>+62 822-3822-8544</p>
+            </ItemAbout>
+            <ItemAbout>
               <p>
                 <GrMail /> Email
               </p>
+              <p>asrulkadir.asus4@gmail.com</p>
+            </ItemAbout>
+            <ItemAbout>
               <p>
                 <FaGlobeAsia /> Web
               </p>
+              <p>asrulkadir.netlify.app</p>
+            </ItemAbout>
+            <ItemAbout>
               <p>
                 <ImLocation2 /> Address
               </p>
-            </div>
-            <div className="value">
-              <p>Asrul Kadir</p>
-              <p>April 19th 1998</p>
-              <p>+62 822-3822-8544</p>
-              <p>asrulkadir.asus4@gmail.com</p>
-              <p>asrulkadir.netlify.app</p>
               <p>South Sulawesi, Indonesia</p>
-            </div>
+            </ItemAbout>
           </About>
 
           <Title>
