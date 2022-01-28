@@ -51,12 +51,12 @@ const Home = () => {
         <HomeWrapper>
           <h3>Hello, I am</h3>
           <h1>ASRUL KADIR</h1>
-          <h4>WEB PROGRAMMER</h4>
+          <h4>FULL STACK ENGINEER</h4>
           <hr />
           <p>
-            A Web Programmer from South Sulawesi, Indonesia. I always try to do
-            my best for each project I did. I hope my effort gives satisfaction
-            to people who need my service.
+            A Full Stack Engineer from South Sulawesi, Indonesia. I always try
+            to do my best for each project I did. I hope my effort gives
+            satisfaction to people who need my service.
           </p>
           <h4>+62 822-3822-8544</h4>
           <p>asrulkadir.asus4@gmail.com</p>
