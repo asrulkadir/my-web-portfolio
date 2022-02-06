@@ -9,6 +9,7 @@ import NodeJsLogo from './logo/nodeJs-logo.png';
 import GolangLogo from './logo/golang-logo.png';
 import ECommerceSinglePage from './portfolio/screencapture-challenge-frontend-mentor.png';
 import SpaceTourism from './portfolio/screencapture-space-tourism.png';
+import SectionComment from './portfolio/section-comment.png';
 
 export {
   ProfilePicture,
@@ -22,4 +23,5 @@ export {
   GolangLogo,
   ECommerceSinglePage,
   SpaceTourism,
+  SectionComment,
 };
