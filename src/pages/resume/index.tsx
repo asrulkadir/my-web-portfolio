@@ -1,11 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import { MdWork } from 'react-icons/md';
-import AnimatedPage from '../../components/Animated';
-import Layout from '../../components/Layout';
-import { Education, Title } from '../profile';
-import { dataSkills } from '../../utils/dataSkill';
-import { device } from '../../utils/responsive';
+import React from "react";
+import styled from "styled-components";
+import { MdWork } from "react-icons/md";
+import AnimatedPage from "../../components/Animated";
+import Layout from "../../components/Layout";
+import { Education, Title } from "../profile";
+import { dataSkills } from "../../utils/dataSkill";
+import { device } from "../../utils/responsive";
+import { dataExperience } from "../../utils/dataExperience";
 
 const ResumeWrapper = styled.div`
   width: 80%;
@@ -77,23 +78,26 @@ const Resume = () => {
               </div>
             </div>
 
-            <div className="wrap">
-              <div className="left">
-                <p>Nov 2021 - Jan 2022</p>
-              </div>
-              <div className="right">
-                <div className="dot"></div>
-                <div className="desc">
-                  <h3>Frontend Engineer Internship / Endorsaja</h3>
-                  <p>
-                    Endorsaja is a mobile application-based marketplace
-                    platform. To bring together the "Brand" with digital
-                    marketing service providers such as "Celebrity and Social
-                    Media Influencers".
-                  </p>
+            {dataExperience.map((item, index) => {
+              return (
+                <div className="wrap" key={index}>
+                  <div className="left">
+                    <p>
+                      {item.StartDate} - {item.EndDate}
+                    </p>
+                  </div>
+                  <div className="right">
+                    <div className="dot"></div>
+                    <div className="desc">
+                      <h3>
+                        {item.Position} / {item.Company}
+                      </h3>
+                      <p>{item.JobDescription}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              );
+            })}
           </Education>
 
           <Title>

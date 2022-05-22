@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FaInstagram, FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
-import { ProfilePicture } from '../../assets';
-import Nav from '../Nav';
-import { device } from '../../utils/responsive';
+import React from "react";
+import styled from "styled-components";
+import { FaInstagram, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { ProfilePicture } from "../../assets";
+import Nav from "../Nav";
+import { device } from "../../utils/responsive";
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -121,7 +121,7 @@ const Layout = ({ children }: any) => {
           <img src={ProfilePicture} alt="" />
           <Name>
             <h3>ASRUL KADIR</h3>
-            <p>Full Stack Engineer</p>
+            <p>Front End Engineer | Full Stack Engineer</p>
           </Name>
           <div>
             <a
