@@ -90,4 +90,10 @@ export const dataSkills: ISkill[] = [
     image:
       "https://gw.alipayobjects.com/zos/rmsportal/rlpTLlbMzTNYuZGGCVYM.png",
   },
+  {
+    name: "Sass/Scss",
+    level: "Intermediate",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png",
+  },
 ];
