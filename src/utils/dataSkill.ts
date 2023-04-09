@@ -58,15 +58,15 @@ export const dataSkills: ISkill[] = [
     image: GolangLogo,
   },
   {
-    name: "MySQL",
+    name: "Jest",
     level: "Beginner",
-    image: "https://download.logo.wine/logo/MySQL/MySQL-Logo.wine.png",
+    image: "https://jestjs.io/img/opengraph.png",
   },
   {
-    name: "PostgreSQL",
+    name: "React Native",
     level: "Beginner",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png",
+      "https://www.kindpng.com/picc/m/765-7652239_react-native-svg-logo-hd-png-download.png",
   },
   {
     name: "MongoDB",

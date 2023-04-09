@@ -2,20 +2,20 @@ import { IDataExperience } from "../types/dataExperience.type";
 
 export const dataExperience: IDataExperience[] = [
   {
-    Position: "Full Stack Developer (Contract)",
-    Company: "Evomo",
-    StartDate: "Jun 2022",
-    EndDate: "Present",
-    JobDescription: `Developed, maintained, and added features dashboard Evomo using NextJS, Typescript, Zustand, TailwindCSS, and Ant Design. 
-      Helped Front End Engineer to develop and maintain the dashboard. Helped Back End Engineer to develop and maintain the API using NodeJS, Express, and MongoDB.`,
-  },
-  {
-    Position: "Front End Engineer (Intern)",
+    Position: "Front End Developer (Fulltime)",
     Company: "Evomo",
     StartDate: "Feb 2022",
-    EndDate: "May 2022",
-    JobDescription: `Developed, maintained, and added features dashboard Evomo using NextJS, Typescript, Zustand, TailwindCSS, and Ant Design. 
-      Helped Front End Engineer to develop and maintain the dashboard.`,
+    EndDate: "Present",
+    JobDescription: `Developed, maintained, added features and bug fixing dashboard Evomo using Javascript, ReactJs, Redux, NextJS, Typescript, Zustand, TailwindCSS, and Ant Design. 
+    Collaborate with Web Designer, Back End Engineer and QA Engineer , etc to develop and maintain the project.`,
+  },
+  {
+    Position: "Front End Engineer (Freelance)",
+    Company: "DOT Indonesia",
+    StartDate: "Jun 2022",
+    EndDate: "Jun 2023",
+    JobDescription: `Developed, maintained, added features and bug fixing NFT Infinity project web app using NextJS, Typescript, Web3, TailwindCSS, and Ant Design. 
+      Collaborate with Back End Engineer and QA engineer to develop and maintain the project.`,
   },
   {
     Position: "Front End Developer (Intern)",

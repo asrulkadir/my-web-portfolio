@@ -77,7 +77,7 @@ const Portfolio = () => {
       <AnimatedPage>
         <PortfolioWrapper>
           <Title>
-            <h3>MY PORTFOLIO</h3>
+            <h3>MY PERSONAL PORTFOLIO</h3>
           </Title>
 
           <PortfolioDiv>

@@ -27,7 +27,7 @@ const ProfileWrapper = styled.div`
 
 export const Title = styled.div`
   border-bottom: 2px solid brown;
-  width: 25%;
+  width: 50%;
   margin: 1.5rem auto;
 
   h3 {

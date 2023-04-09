@@ -121,7 +121,7 @@ const Layout = ({ children }: any) => {
           <img src={ProfilePicture} alt="" />
           <Name>
             <h3>ASRUL KADIR</h3>
-            <p>Front End Engineer | Full Stack Engineer</p>
+            <p>Front End Developer</p>
           </Name>
           <div>
             <a

@@ -51,14 +51,16 @@ const Home = () => {
         <HomeWrapper>
           <h3>Hello, I am</h3>
           <h1>ASRUL KADIR</h1>
-          <h4>FRONT END ENGINEER | FULL STACK ENGINEER</h4>
+          <h4>FRONT END DEVELOPER</h4>
           <hr />
           <p>
-            A Front End Engineer / Full Stack Engineer from South Sulawesi,
-            Indonesia. I always try to do my best for each project I did. I hope
-            my effort gives satisfaction to people who need my service. I am
-            open to learning a new technology who needed and I am always
-            motivated to improve my skills.
+            Hi, I'm Asrul Kadir, a dedicated Frontend Developer with a passion
+            for crafting visually captivating and user-friendly websites and
+            applications with experience in HTML, CSS, JavaScript, React, NextJs
+            and TypeScript. I am dedicated to delivering my best in every
+            project I undertake. My goal is to provide satisfaction to those who
+            require my services. With unwavering enthusiasm, I continually
+            embrace new technologies and stay motivated to enhance my skills.
           </p>
           <h4>+62 822-3822-8544</h4>
           <p>asrulkadir.asus4@gmail.com</p>
