@@ -65,7 +65,7 @@ const Home = () => {
           <h4>+62 822-3822-8544</h4>
           <p>asrulkadir.asus4@gmail.com</p>
 
-          <Download to="./Asrul Kadir.pdf" target="_blank" download>
+          <Download to="./Asrul_Kadir.pdf" target="_blank" download>
             Download My CV
           </Download>
         </HomeWrapper>
