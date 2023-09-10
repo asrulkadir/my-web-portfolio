@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  FaCalendar,
+  // FaCalendar,
   FaCode,
   FaGlobeAsia,
   FaGraduationCap,
@@ -169,12 +169,12 @@ const Profile = () => {
               </p>
               <p>Asrul Kadir</p>
             </ItemAbout>
-            <ItemAbout>
+            {/* <ItemAbout>
               <p>
                 <FaCalendar /> Date of Birth
               </p>
               <p>April 19th 1998</p>
-            </ItemAbout>
+            </ItemAbout> */}
             <ItemAbout>
               <p>
                 <FaPhone /> Phone
