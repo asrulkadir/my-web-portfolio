@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import AnimatedPage from "../../components/Animated";
@@ -26,7 +26,7 @@ const HomeWrapper = styled.div`
   }
 `;
 
-const Download = styled(Link)`
+const ButtonView = styled.button`
   display: block;
   height: 2rem;
   width: 10rem;
@@ -36,6 +36,7 @@ const Download = styled(Link)`
   text-decoration: none;
   color: brown;
   font-weight: bold;
+  cursor: pointer;
 
   &:hover {
     background: brown;
@@ -44,7 +45,22 @@ const Download = styled(Link)`
   }
 `;
 
+const ModalIFrame = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+`;
+
+const LinkDownload = styled(Link)`
+  text-decoration: none;
+`
+
 const Home = () => {
+  const [isView, setIsView] = useState(false);
   return (
     <Layout>
       <AnimatedPage>
@@ -65,9 +81,33 @@ const Home = () => {
           <h4>+62 822-3822-8544</h4>
           <p>asrulkadir.asus4@gmail.com</p>
 
-          <Download to="./Asrul_Kadir.pdf" target="_blank" download>
-            Download My CV
-          </Download>
+          <div>
+            <ButtonView onClick={() => setIsView(true)}>
+              View My CV
+            </ButtonView>
+            <LinkDownload
+              to="./Asrul_Kadir.pdf" 
+              target="_blank" 
+              download
+            >
+              <ButtonView>
+                  Download My CV
+              </ButtonView>
+            </LinkDownload>
+          </div>
+          {isView && (
+            <ModalIFrame>
+              <ButtonView onClick={() => setIsView(false)}>
+                Close
+              </ButtonView>
+              <iframe
+                src="./Asrul_Kadir.pdf"
+                width="100%"
+                height="90%"
+                title="Asrul Kadir CV"
+              />
+            </ModalIFrame>
+          )}
         </HomeWrapper>
       </AnimatedPage>
     </Layout>
