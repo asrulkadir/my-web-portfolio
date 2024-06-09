@@ -138,13 +138,13 @@ const Layout = ({ children }: any) => {
             >
               <FaLinkedin size="2rem" />
             </a>
-            <a
+            {/* <a
               href="https://www.instagram.com/asrul_k/"
               rel="noopener noreferrer"
               target="_blank"
             >
               <FaInstagram size="2rem" />
-            </a>
+            </a> */}
             <a
               href="https://wa.me/6282238228544"
               rel="noopener noreferrer"
