@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FaInstagram, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { ProfilePicture } from "../../assets";
 import Nav from "../Nav";
 import { device } from "../../utils/responsive";
