@@ -132,7 +132,7 @@ const Layout = ({ children }: any) => {
               <FaGithub size="2rem" />
             </a>
             <a
-              href="https://www.linkedin.com/in/asrul-kadir-19ap98/"
+              href="https://www.linkedin.com/in/asrulkadir"
               rel="noopener noreferrer"
               target="_blank"
             >
