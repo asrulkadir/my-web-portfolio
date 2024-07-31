@@ -4,6 +4,7 @@ import styled from "styled-components";
 import AnimatedPage from "../../components/Animated";
 import Layout from "../../components/Layout";
 import { device } from "../../utils/responsive";
+import { colors } from "../../utils/color";
 
 const HomeWrapper = styled.div`
   width: 80%;
@@ -30,16 +31,16 @@ const ButtonView = styled.button`
   display: block;
   height: 2rem;
   width: 10rem;
-  border: 2px solid brown;
+  border: 2px solid ${colors.primary};
   margin: 1rem auto;
   text-align: center;
   text-decoration: none;
-  color: brown;
+  color: ${colors.primary};
   font-weight: bold;
   cursor: pointer;
 
   &:hover {
-    background: brown;
+    background: ${colors.primary};
     transition: 0.5s ease all;
     color: white;
   }
@@ -70,7 +71,7 @@ const Home = () => {
           <h4>FRONT END DEVELOPER</h4>
           <hr />
           <p>
-            Hi, I'm Asrul Kadir, a dedicated Frontend Developer with a passion
+            Hi, I am Asrul Kadir, a dedicated Frontend Developer with a passion
             for crafting visually captivating and user-friendly websites and
             applications with experience in HTML, CSS, JavaScript, React, NextJs
             and TypeScript. I am dedicated to delivering my best in every

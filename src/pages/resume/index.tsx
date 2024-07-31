@@ -7,6 +7,7 @@ import { Education, Title } from "../profile";
 import { dataSkills } from "../../utils/dataSkill";
 import { device } from "../../utils/responsive";
 import { dataExperience } from "../../utils/dataExperience";
+import { colors } from "../../utils/color";
 
 const ResumeWrapper = styled.div`
   width: 80%;
@@ -25,7 +26,7 @@ const Skills = styled.div`
   div {
     width: 20%;
     margin: 1rem 0.5rem 0.5rem;
-    border: 2px solid brown;
+    border: 2px solid ${colors.primary};
     display: flex;
     flex-direction: column;
     height: 12.5rem;
@@ -46,7 +47,7 @@ const Skills = styled.div`
   }
 
   .item {
-    background: brown;
+    background: ${colors.primary};
     color: #e6e6e6;
     width: 100%;
     margin: 0;

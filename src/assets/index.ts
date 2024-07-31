@@ -11,6 +11,7 @@ import ECommerceSinglePage from "./portfolio/screencapture-challenge-frontend-me
 import SpaceTourism from "./portfolio/screencapture-space-tourism.png";
 import SectionComment from "./portfolio/section-comment.png";
 import CloneFacebook from "./portfolio/clone-facebook.png";
+import Background from "./background.png";
 
 export {
   ProfilePicture,
@@ -26,4 +27,5 @@ export {
   SpaceTourism,
   SectionComment,
   CloneFacebook,
+  Background,
 };

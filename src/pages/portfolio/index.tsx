@@ -6,6 +6,7 @@ import Layout from '../../components/Layout';
 import { dataPortfolio } from '../../utils/dataPortfolio';
 import { device } from '../../utils/responsive';
 import { Title } from '../profile';
+import { colors } from '../../utils/color';
 
 const PortfolioWrapper = styled.div`
   width: 80%;
@@ -26,7 +27,7 @@ const PortfolioDiv = styled.div`
 
   .port {
     width: 100%;
-    border: 1px solid brown;
+    border: 1px solid ${colors.primary};
     cursor: pointer;
     height: 20vh;
     display: flex;
@@ -51,7 +52,7 @@ const PortfolioDiv = styled.div`
   }
 
   .port:hover {
-    background: brown;
+    background: ${colors.primary};
     transition: 0.5s ease-in-out all;
 
     h4 {

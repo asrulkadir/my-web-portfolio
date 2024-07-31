@@ -1,11 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { colors } from '../../utils/color';
 
 const NotFoundDiv = styled.div`
   width: 100%;
   height: 100%;
-  background: brown;
+  background: ${colors.primary};
   color: black;
   display: flex;
   flex-direction: column;
@@ -29,7 +30,7 @@ const NotFoundDiv = styled.div`
       display: block;
       font-weight: bold;
       padding: 0.5rem;
-      background: maroon;
+      background: ${colors.primary};
       cursor: pointer;
       color: whitesmoke;
     }

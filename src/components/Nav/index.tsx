@@ -7,21 +7,22 @@ import { MdWork } from 'react-icons/md';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { device } from '../../utils/responsive';
+import { colors } from '../../utils/color';
 
 const Navigation = styled.div`
   display: flex;
-  background: #e6e6e6;
+  background: ${colors.nav};
 
   @media ${device.mobile} {
     width: 95vw;
   }
 `;
 
-const Item = styled.div<{ param: Boolean }>`
+const Item = styled.div<{ param: boolean }>`
   padding: 1rem;
   width: 20%;
   cursor: pointer;
-  background: ${(props) => (props.param ? 'white' : '#e6e6e6')};
+  background: ${(props) => (props.param ? colors.background : colors.nav)};
 
   @media ${device.tablet} {
     padding: 1rem 0.25rem;
@@ -34,7 +35,7 @@ const Item = styled.div<{ param: Boolean }>`
 
   p {
     text-align: center;
-    color: ${(props) => (props.param ? 'brown' : 'black')};
+    color: ${(props) => (props.param ? colors.primary : 'black')};
     font-weight: ${(props) => (props.param ? 'bold' : 'normal')};
 
     @media ${device.mobile} {
@@ -44,7 +45,7 @@ const Item = styled.div<{ param: Boolean }>`
 
   .icon {
     text-align: center;
-    color: ${(props) => (props.param ? 'brown' : 'black')};
+    color: ${(props) => (props.param ? colors.primary : 'black')};
     font-weight: ${(props) => (props.param ? 'bold' : 'normal')};
     display: none;
 
@@ -54,7 +55,7 @@ const Item = styled.div<{ param: Boolean }>`
   }
 
   &:hover {
-    background: ${(props) => (props.param ? 'white' : 'grey')};
+    background: ${(props) => (props.param ? colors.background : 'grey')};
   }
 `;
 
@@ -65,7 +66,7 @@ const Nav = () => {
   return (
     <Navigation>
       <Item
-        param={pathname === '/' ? true : false}
+        param={pathname === '/'}
         onClick={() => navigate('/')}
       >
         <p>HOME</p>
@@ -74,7 +75,7 @@ const Nav = () => {
         </p>
       </Item>
       <Item
-        param={pathname === '/profile' ? true : false}
+        param={pathname === '/profile'}
         onClick={() => navigate('/profile')}
       >
         <p>PROFILE</p>
@@ -83,7 +84,7 @@ const Nav = () => {
         </p>
       </Item>
       <Item
-        param={pathname === '/resume' ? true : false}
+        param={pathname === '/resume'}
         onClick={() => navigate('/resume')}
       >
         <p>RESUME</p>
@@ -92,7 +93,7 @@ const Nav = () => {
         </p>
       </Item>
       <Item
-        param={pathname === '/portfolio' ? true : false}
+        param={pathname === '/portfolio'}
         onClick={() => navigate('/portfolio')}
       >
         <p>PORTFOLIO</p>
@@ -101,7 +102,7 @@ const Nav = () => {
         </p>
       </Item>
       <Item
-        param={pathname === '/contact' ? true : false}
+        param={pathname === '/contact'}
         onClick={() => navigate('/contact')}
       >
         <p>CONTACT</p>

@@ -5,11 +5,12 @@ import { dataPortfolio } from '../../../utils/dataPortfolio';
 import { device } from '../../../utils/responsive';
 import NotFound from '../../404';
 import { Title } from '../../profile';
+import { colors } from '../../../utils/color';
 
 const Container = styled.div`
   width: 100%;
   min-height: 100vh;
-  background: brown;
+  background: ${colors.primary};
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -18,7 +19,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 80vw;
   background: white;
-  color: brown;
+  color: ${colors.primary};
   margin: 2rem auto;
 
   @media ${device.tablet} {
@@ -80,7 +81,7 @@ const Technology = styled.div`
     p {
       text-align: center;
       a {
-        color: brown;
+        color: ${colors.primary};
         text-decoration: none;
       }
 
@@ -93,8 +94,8 @@ const Technology = styled.div`
 
 const View = styled.a`
   width: 20%;
-  color: brown;
-  border: 1px solid brown;
+  color: ${colors.primary};
+  border: 1px solid ${colors.primary};
   margin: 1rem auto;
   display: block;
   text-align: center;
@@ -112,7 +113,7 @@ const View = styled.a`
   }
 
   &:hover {
-    background: brown;
+    background: ${colors.primary};
     color: white;
     transition: 0.5s ease all;
   }
@@ -121,7 +122,7 @@ const View = styled.a`
 const Back = styled.button`
   padding: 0.25rem;
   border: none;
-  background: brown;
+  background: ${colors.primary};
   color: white;
   margin: 2rem auto;
   display: block;
@@ -137,12 +138,13 @@ const Back = styled.button`
 const DetailPortfolio = () => {
   const [showPortfolio, setShowPortfolio] = useState<boolean>(true);
   const navigate = useNavigate();
-  const { id }: any = useParams();
+  const { id }: { id?: string } = useParams();
+  const parsedId = parseInt(id ?? '');
 
   useEffect(() => {
     setShowPortfolio(
       dataPortfolio.some((li) => {
-        return li.id === parseInt(id);
+        return li.id === parsedId;
       })
     );
   }, [id, navigate]);
@@ -152,7 +154,7 @@ const DetailPortfolio = () => {
       <Wrapper>
         {showPortfolio ? (
           dataPortfolio.map((li, index) => {
-            if (li.id === parseInt(id)) {
+            if (li.id === parsedId) {
               return (
                 <div key={index}>
                   <Title>

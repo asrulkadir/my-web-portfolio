@@ -15,6 +15,7 @@ import styled from 'styled-components';
 import AnimatedPage from '../../components/Animated';
 import Layout from '../../components/Layout';
 import { device } from '../../utils/responsive';
+import { colors } from '../../utils/color';
 
 const ProfileWrapper = styled.div`
   width: 80%;
@@ -26,7 +27,7 @@ const ProfileWrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  border-bottom: 2px solid brown;
+  border-bottom: 2px solid ${colors.primary};
   width: 50%;
   margin: 1.5rem auto;
 
@@ -83,7 +84,7 @@ export const Education = styled.div`
 
   .right {
     width: 70%;
-    border-left: 3px solid brown;
+    border-left: 3px solid ${colors.primary};
     padding-left: 2rem;
     padding-bottom: 1rem;
 
@@ -91,7 +92,7 @@ export const Education = styled.div`
       width: 4rem;
       height: 4rem;
       border-radius: 50%;
-      background: brown;
+      background: ${colors.primary};
       color: black;
       display: flex;
       justify-content: center;
@@ -103,7 +104,7 @@ export const Education = styled.div`
     .dot {
       width: 1rem;
       height: 1rem;
-      background: brown;
+      background: ${colors.primary};
       border-radius: 50%;
       margin: 0.25rem 0 0 -2.55rem;
     }
@@ -241,7 +242,7 @@ const Profile = () => {
                   <h3>Senior High School / SMKN 2 Parepare</h3>
                   <p>
                     My major is Electronic Engineering at SMKN 2 Parepare, I
-                    haven't known about programming when I school there, I just
+                    haven&apos;t known about programming when I school there, I just
                     knew about electronic engineering
                   </p>
                 </div>
@@ -255,7 +256,7 @@ const Profile = () => {
           <Hobbies>
             <p>
               My hobby is coding, I learned programming because I love coding
-              and it's my passion, I also enjoy watching action movies or
+              and it&apos;s my passion, I also enjoy watching action movies or
               animes, and sometimes enjoy playing footbal or futsal.
             </p>
             <div className="icon">

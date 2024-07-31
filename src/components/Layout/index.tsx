@@ -1,14 +1,15 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import { ProfilePicture } from "../../assets";
+import { ProfilePicture, Background  } from "../../assets";
 import Nav from "../Nav";
 import { device } from "../../utils/responsive";
+import { colors } from "../../utils/color";
 
 export const Container = styled.div`
   min-height: 100vh;
   min-width: 100vw;
-  background-color: brown;
+  background-color: ${colors.primary};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,7 +22,7 @@ export const Container = styled.div`
 `;
 
 const Content = styled.div`
-  background: white;
+  background: ${colors.background};
   width: 90vw;
   height: 80vh;
   display: flex;
@@ -37,10 +38,9 @@ const Content = styled.div`
 
 const ImgDiv = styled.div`
   width: 30%;
-  background: black;
-  display: flex;
-  flex-direction: column;
-  color: white;
+  background: url(${Background});
+  color: ${colors.background};
+  position: relative;
 
   @media ${device.tablet} {
   }
@@ -50,44 +50,13 @@ const ImgDiv = styled.div`
     height: 50vh;
   }
 
-  img {
-    display: block;
-    margin: auto;
-    width: 90%;
-    height: 90%;
-
-    @media ${device.tablet} {
-      height: 60%;
-      margin: 5vh auto 40vh;
-    }
-
-    @media ${device.mobile} {
-      height: 85%;
-      width: 80%;
-    }
-  }
-
-  div {
-    display: flex;
-    height: 10%;
-    justify-content: space-around;
-
-    a {
-      color: white;
-    }
-
-    @media ${device.mobile} {
-      margin: 0 0 1rem;
-    }
-  }
 `;
 
 const Name = styled.div`
-  position: absolute;
-  bottom: 18vh;
-  left: 6vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 
   @media ${device.mobile} {
     top: 32.5vh;
@@ -109,50 +78,99 @@ const Information = styled.div`
   overflow: auto;
 
   div {
-    color: brown;
+    color: ${colors.text};
   }
 `;
 
-const Layout = ({ children }: any) => {
+const ProfileWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  img {
+    display: flex;
+    width: 25%;
+    border-radius: 50%;
+    background-color: white;
+
+    @media ${device.tablet} {
+      height: 25%;
+    }
+
+    @media ${device.mobile} {
+      width: 25%;
+    }
+  }
+
+  div {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 1rem;
+
+    a {
+      color: white;
+    }
+
+    @media ${device.mobile} {
+      margin: 0 0 1rem;
+    }
+  }
+
+  @media ${device.mobile} {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
+`;
+  
+
+const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <Container>
       <Content>
         <ImgDiv>
-          <img src={ProfilePicture} alt="" />
-          <Name>
-            <h3>ASRUL KADIR</h3>
-            <p>Front End Developer</p>
-          </Name>
-          <div>
-            <a
-              href="https://github.com/asrulkadir"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <FaGithub size="2rem" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/asrulkadir"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <FaLinkedin size="2rem" />
-            </a>
-            {/* <a
+          <ProfileWrapper>
+            <img src={ProfilePicture} alt="" />
+            <Name>
+              <h3>ASRUL KADIR</h3>
+              <p>Front End Developer</p>
+            </Name>
+            <div>
+              <a
+                href="https://github.com/asrulkadir"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <FaGithub size="2rem" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/asrulkadir"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <FaLinkedin size="2rem" />
+              </a>
+              {/* <a
               href="https://www.instagram.com/asrul_k/"
               rel="noopener noreferrer"
               target="_blank"
             >
               <FaInstagram size="2rem" />
             </a> */}
-            <a
-              href="https://wa.me/6282238228544"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <FaWhatsapp size="2rem" />
-            </a>
-          </div>
+              <a
+                href="https://wa.me/6282238228544"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <FaWhatsapp size="2rem" />
+              </a>
+            </div>
+          </ProfileWrapper>
         </ImgDiv>
 
         <Info>
