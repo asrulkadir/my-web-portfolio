@@ -3,6 +3,7 @@
 //   LoadScript,
 //   Marker, // Import Marker
 // } from '@react-google-maps/api';
+import React from "react";
 import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -23,7 +24,7 @@ function MapComponent() {
   //   lng: 119.6151426,
   // };
 
-  const center: any = [-3.925568, 119.601222];
+  const center: [number, number] = [-3.925568, 119.601222];
 
   // ContainerStyle Berfungsi Untuk Mengatur StyleContainer Untuk google maps
   // const containerStyle = {
@@ -58,22 +59,20 @@ function MapComponent() {
   // );
 
   return (
-    <>
-      <MapContainer
-        center={center}
-        zoom={13}
-        scrollWheelZoom={false}
-        style={{ height: "50vh", width: "100%" }}
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={center} icon={icon}>
-          <Popup>Desa Polewali Kecamatan Suppa Kabupaten Pinrang</Popup>
-        </Marker>
-      </MapContainer>
-    </>
+    <MapContainer
+      center={center}
+      zoom={13}
+      scrollWheelZoom={false}
+      style={{ height: "50vh", width: "100%" }}
+    >
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      <Marker position={center} icon={icon}>
+        <Popup>Desa Polewali Kecamatan Suppa Kabupaten Pinrang</Popup>
+      </Marker>
+    </MapContainer>
   );
 }
 
