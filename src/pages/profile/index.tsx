@@ -192,7 +192,7 @@ const Profile = () => {
               <p>
                 <FaGlobeAsia /> Web
               </p>
-              <p>asrulkadir.netlify.app</p>
+              <p>asrulkadir.com</p>
             </ItemAbout>
             <ItemAbout>
               <p>
