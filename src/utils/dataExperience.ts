@@ -2,7 +2,7 @@ import { IDataExperience } from "../types/dataExperience.type";
 
 export const dataExperience: IDataExperience[] = [
   {
-    Position: "Front End Developer (Fulltime)",
+    Position: "Frontend Developer (Fulltime)",
     Company: "Evomo",
     StartDate: "Feb 2022",
     EndDate: "Present",
@@ -10,7 +10,7 @@ export const dataExperience: IDataExperience[] = [
     Collaborate with Web Designer, Back End Engineer and QA Engineer , etc to develop and maintain the project.`,
   },
   {
-    Position: "Front End Engineer (Freelance)",
+    Position: "Frontend Engineer (Freelance)",
     Company: "DOT Indonesia",
     StartDate: "Jun 2022",
     EndDate: "Jun 2023",
@@ -18,7 +18,7 @@ export const dataExperience: IDataExperience[] = [
       Collaborate with Back End Engineer and QA engineer to develop and maintain the project.`,
   },
   {
-    Position: "Front End Developer (Intern)",
+    Position: "Frontend Developer (Intern)",
     Company: "Kawan Kerja",
     StartDate: "Feb 2022",
     EndDate: "Apr 2022",
@@ -26,7 +26,7 @@ export const dataExperience: IDataExperience[] = [
       "Developed a web company profile using ReactJS, Typescript, and Styled-Components.",
   },
   {
-    Position: "Front End Engineer (Intern)",
+    Position: "Frontend Engineer (Intern)",
     Company: "Endorsaja",
     StartDate: "Nov 2021",
     EndDate: "Jan 2022",

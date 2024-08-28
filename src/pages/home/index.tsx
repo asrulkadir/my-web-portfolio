@@ -68,7 +68,7 @@ const Home = () => {
         <HomeWrapper>
           <h3>Hello, I am</h3>
           <h1>ASRUL KADIR</h1>
-          <h4>FRONT END DEVELOPER</h4>
+          <h4>FRONTEND DEVELOPER</h4>
           <hr />
           <p>
             Hi, I am Asrul Kadir, a dedicated Frontend Developer with a passion
