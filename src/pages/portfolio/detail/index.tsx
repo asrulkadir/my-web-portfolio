@@ -6,6 +6,7 @@ import { device } from '../../../utils/responsive';
 import NotFound from '../../404';
 import { Title } from '../../profile';
 import { colors } from '../../../utils/color';
+import { Tag, TagWrapper } from '../../../components/Styled/Tag';
 
 const Container = styled.div`
   width: 100%;
@@ -44,53 +45,53 @@ const Wrapper = styled.div`
   }
 `;
 
-const Technology = styled.div`
-  width: 90%;
-  margin: auto;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+// const Technology = styled.div`
+//   width: 90%;
+//   margin: auto;
+//   display: flex;
+//   justify-content: space-evenly;
+//   flex-wrap: wrap;
 
-  div {
-    width: 20%;
-    height: 10rem;
+//   div {
+//     width: 20%;
+//     height: 10rem;
 
-    @media ${device.tablet} {
-      width: 25%;
-    }
+//     @media ${device.tablet} {
+//       width: 25%;
+//     }
 
-    @media ${device.mobile} {
-      width: 45%;
-      height: 7.5rem;
-      margin: 0.5rem 0;
-    }
+//     @media ${device.mobile} {
+//       width: 45%;
+//       height: 7.5rem;
+//       margin: 0.5rem 0;
+//     }
 
-    img {
-      width: 100%;
-      height: 80%;
+//     img {
+//       width: 100%;
+//       height: 80%;
 
-      @media ${device.tablet} {
-        height: 50%;
-      }
+//       @media ${device.tablet} {
+//         height: 50%;
+//       }
 
-      @media ${device.mobile} {
-        height: 75%;
-      }
-    }
+//       @media ${device.mobile} {
+//         height: 75%;
+//       }
+//     }
 
-    p {
-      text-align: center;
-      a {
-        color: ${colors.primary};
-        text-decoration: none;
-      }
+//     p {
+//       text-align: center;
+//       a {
+//         color: ${colors.primary};
+//         text-decoration: none;
+//       }
 
-      a:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-`;
+//       a:hover {
+//         text-decoration: underline;
+//       }
+//     }
+//   }
+// `;
 
 const View = styled.a`
   width: 20%;
@@ -165,7 +166,7 @@ const DetailPortfolio = () => {
                   <Title>
                     <h3>Built With</h3>
                   </Title>
-                  <Technology>
+                  {/* <Technology>
                     {li.technologies.map((tech, index) => {
                       return (
                         <div key={index}>
@@ -182,11 +183,25 @@ const DetailPortfolio = () => {
                         </div>
                       );
                     })}
-                  </Technology>
+                  </Technology> */}
+                  <TagWrapper>
+                    {
+                      li.technologies.map((tech, index) => {
+                        return (
+                          <Tag key={index}>
+                            {tech.name}
+                          </Tag>
+                        );
+                      })
+                    }
+                  </TagWrapper>
 
-                  <View href={li.site} target="_blank">
-                    View Portfolio
-                  </View>
+                  {
+                    li.site && 
+                    <View href={li.site} target="_blank">
+                      View Portfolio
+                    </View>
+                  }
                   <Back onClick={() => navigate(-1)}>Back</Back>
                 </div>
               );

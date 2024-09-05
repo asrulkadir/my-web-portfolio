@@ -119,5 +119,6 @@ export const skills = [
   "Prisma",
   "PostgreSQL",
   "MongoDB",
-  "Docker" 
+  "Docker",
+  "Golang", 
 ];

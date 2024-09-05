@@ -15,7 +15,7 @@ export const dataPortfolio: IPortfolioData[] = [
     site: "https://space-tourim-asrulkadir.netlify.app",
     technologies: [
       {
-        name: "ReactJs",
+        name: "React.js",
         image: "https://reactjs.org/logo-og.png",
         link: "https://reactjs.org",
       },
@@ -39,12 +39,12 @@ export const dataPortfolio: IPortfolioData[] = [
     site: "https://challenge-frontend-mentor-two.vercel.app",
     technologies: [
       {
-        name: "ReactJs",
+        name: "React.js",
         image: "https://reactjs.org/logo-og.png",
         link: "https://reactjs.org",
       },
       {
-        name: "NextJs",
+        name: "Next.js",
         image:
           "https://lampungkode.id/wp-content/uploads/2021/07/nextjs-logo.png",
         link: "https://nextjs.org",
@@ -64,7 +64,7 @@ export const dataPortfolio: IPortfolioData[] = [
     site: "https://section-comment.vercel.app",
     technologies: [
       {
-        name: "ReactJs",
+        name: "React.js",
         image: "https://reactjs.org/logo-og.png",
         link: "https://reactjs.org",
       },
@@ -94,7 +94,7 @@ export const dataPortfolio: IPortfolioData[] = [
     site: "https://clone-fb-asrulk.netlify.app",
     technologies: [
       {
-        name: "ReactJs",
+        name: "React.js",
         image: "https://reactjs.org/logo-og.png",
         link: "https://reactjs.org",
       },

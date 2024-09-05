@@ -7,7 +7,7 @@ import { Education, Title } from "../profile";
 import { skills } from "../../utils/dataSkill";
 import { device } from "../../utils/responsive";
 import { dataExperience } from "../../utils/dataExperience";
-import { colors } from "../../utils/color";
+import { Tag, TagWrapper } from "../../components/Styled/Tag";
 
 const ResumeWrapper = styled.div`
   width: 80%;
@@ -59,20 +59,6 @@ const ResumeWrapper = styled.div`
 //     }
 //   }
 // `;
-
-const SkillsWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-  margin-bottom: 1rem;
-`
-const Tag = styled.div`
-  border: 2px solid ${colors.primary};
-  padding: 0.25rem;
-  border-radius: 5px;
-  color: ${colors.primary};
-`
 
 const Resume = () => {
   return (
@@ -132,13 +118,13 @@ const Resume = () => {
               );
             })}
           </Skills> */}
-          <SkillsWrapper>
+          <TagWrapper>
             {skills.map((skill) => {
               return (
                 <Tag key={skill}>{skill}</Tag>
               );
             })}
-          </SkillsWrapper>
+          </TagWrapper>
         </ResumeWrapper>
       </AnimatedPage>
     </Layout>

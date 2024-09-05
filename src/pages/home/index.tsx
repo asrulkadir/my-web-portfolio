@@ -38,6 +38,7 @@ const ButtonView = styled.button`
   color: ${colors.primary};
   font-weight: bold;
   cursor: pointer;
+  background-color: ${colors.background};
 
   &:hover {
     background: ${colors.primary};
