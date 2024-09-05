@@ -73,8 +73,10 @@ const Home = () => {
           <p>
             Hi, I am Asrul Kadir, a dedicated Frontend Developer with a passion
             for crafting visually captivating and user-friendly websites and
-            applications with experience in HTML, CSS, JavaScript, React, NextJs
-            and TypeScript. I am dedicated to delivering my best in every
+            applications with experience in HTML, CSS, JavaScript, React.js, Next.js
+            and TypeScript. Additionally, I have experience with backend development using Node.js and NestJS, 
+            allowing me to integrate frontend applications with backend services better.
+            I am dedicated to delivering my best in every
             project I undertake. My goal is to provide satisfaction to those who
             require my services. With unwavering enthusiasm, I continually
             embrace new technologies and stay motivated to enhance my skills.

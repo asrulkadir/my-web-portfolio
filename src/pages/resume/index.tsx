@@ -4,7 +4,7 @@ import { MdWork } from "react-icons/md";
 import AnimatedPage from "../../components/Animated";
 import Layout from "../../components/Layout";
 import { Education, Title } from "../profile";
-import { dataSkills } from "../../utils/dataSkill";
+import { skills } from "../../utils/dataSkill";
 import { device } from "../../utils/responsive";
 import { dataExperience } from "../../utils/dataExperience";
 import { colors } from "../../utils/color";
@@ -18,47 +18,61 @@ const ResumeWrapper = styled.div`
   }
 `;
 
-const Skills = styled.div`
+// const Skills = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   flex-wrap: wrap;
+
+//   div {
+//     width: 20%;
+//     margin: 1rem 0.5rem 0.5rem;
+//     border: 2px solid ${colors.primary};
+//     display: flex;
+//     flex-direction: column;
+//     height: 12.5rem;
+
+//     @media ${device.tablet} {
+//       width: 29%;
+//     }
+
+//     @media ${device.mobile} {
+//       width: 40%;
+//     }
+
+//     img {
+//       display: block;
+//       width: 100%;
+//       height: 70%;
+//     }
+//   }
+
+//   .item {
+//     background: ${colors.primary};
+//     color: #e6e6e6;
+//     width: 100%;
+//     margin: 0;
+//     height: 30.5%;
+
+//     p,
+//     h3 {
+//       text-align: center;
+//     }
+//   }
+// `;
+
+const SkillsWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-
-  div {
-    width: 20%;
-    margin: 1rem 0.5rem 0.5rem;
-    border: 2px solid ${colors.primary};
-    display: flex;
-    flex-direction: column;
-    height: 12.5rem;
-
-    @media ${device.tablet} {
-      width: 29%;
-    }
-
-    @media ${device.mobile} {
-      width: 40%;
-    }
-
-    img {
-      display: block;
-      width: 100%;
-      height: 70%;
-    }
-  }
-
-  .item {
-    background: ${colors.primary};
-    color: #e6e6e6;
-    width: 100%;
-    margin: 0;
-    height: 30.5%;
-
-    p,
-    h3 {
-      text-align: center;
-    }
-  }
-`;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+`
+const Tag = styled.div`
+  border: 2px solid ${colors.primary};
+  padding: 0.25rem;
+  border-radius: 5px;
+  color: ${colors.primary};
+`
 
 const Resume = () => {
   return (
@@ -105,7 +119,7 @@ const Resume = () => {
             <h3>MY SKILLS</h3>
           </Title>
 
-          <Skills>
+          {/* <Skills>
             {dataSkills.map((li, index) => {
               return (
                 <div key={index}>
@@ -117,7 +131,14 @@ const Resume = () => {
                 </div>
               );
             })}
-          </Skills>
+          </Skills> */}
+          <SkillsWrapper>
+            {skills.map((skill) => {
+              return (
+                <Tag key={skill}>{skill}</Tag>
+              );
+            })}
+          </SkillsWrapper>
         </ResumeWrapper>
       </AnimatedPage>
     </Layout>

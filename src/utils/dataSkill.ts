@@ -97,3 +97,27 @@ export const dataSkills: ISkill[] = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png",
   },
 ];
+
+export const skills = [
+  "HTML",
+  "CSS",
+  "Javascript",
+  "Git",
+  "React.js", 
+  "Typescript", 
+  "Next.js", 
+  "TailwindCSS", 
+  "Ant Design",
+  "Redux",
+  "Jest",
+  "Sass/Scss",
+  "Styled-Components", 
+  "React Native",
+  "Node.js",
+  "NestJS",
+  "Express.js", 
+  "Prisma",
+  "PostgreSQL",
+  "MongoDB",
+  "Docker" 
+];
