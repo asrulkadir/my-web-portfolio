@@ -69,18 +69,13 @@ const Home = () => {
         <HomeWrapper>
           <h3>Hello, I am</h3>
           <h1>ASRUL KADIR</h1>
-          <h4>FRONTEND DEVELOPER</h4>
+          <h4>FULL STACK DEVELOPER</h4>
           <hr />
           <p>
-            Hi, I am Asrul Kadir, a dedicated Frontend Developer with a passion
-            for crafting visually captivating and user-friendly websites and
-            applications with experience in HTML, CSS, JavaScript, React.js, Next.js
-            and TypeScript. Additionally, I have experience with backend development using Node.js and NestJS, 
-            allowing me to integrate frontend applications with backend services better.
-            I am dedicated to delivering my best in every
-            project I undertake. My goal is to provide satisfaction to those who
-            require my services. With unwavering enthusiasm, I continually
-            embrace new technologies and stay motivated to enhance my skills.
+          Hi, I am Asrul Kadir, a Full Stack Developer with experience building responsive and high-quality web applications using React.js, Next.js, and TypeScript. 
+          I also have experience with backend development using Node.js, NestJS, and Golang to create full-stack applications. 
+          I am dedicated to delivering the best results in every project, ensuring that clients are satisfied with clean, efficient, and dependable code. 
+          I stay enthusiastic about learning new technologies and constantly work to improve my skills.
           </p>
           <h4>+62 822-3822-8544</h4>
           <p>asrulkadir.asus4@gmail.com</p>

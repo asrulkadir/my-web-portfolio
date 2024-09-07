@@ -116,7 +116,7 @@ export const skills = [
   "Node.js",
   "NestJS",
   "Express.js", 
-  "Prisma",
+  "Prisma ORM",
   "PostgreSQL",
   "MongoDB",
   "Docker",
