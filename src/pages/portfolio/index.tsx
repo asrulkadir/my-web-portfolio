@@ -82,19 +82,26 @@ const Portfolio = () => {
           </Title>
 
           <PortfolioDiv>
-            {dataPortfolio.map((li, index) => {
+            {dataPortfolio.map((li) => {
               return (
                 <div
-                  key={index}
+                  key={li.id}
                   className="port"
-                  onMouseOver={() => handleMouseOver(index + 1)}
+                  onMouseOver={() => handleMouseOver(li.id)}
+                  onFocus={() => handleMouseOver(li.id)}
                   onMouseLeave={() => handleMouseLeave()}
+                  onBlur={() => handleMouseLeave()}
                   onClick={() => navigate(`${li.id}`)}
+                  tabIndex={0}
                 >
-                  {hover === index + 1 ? (
+                  {hover === li.id ? (
                     <h4>{li.title}</h4>
                   ) : (
-                    <img src={li.image} alt="Space Tourism" />
+                    <img 
+                      src={li.image} 
+                      alt={li.title}
+                      style={{ objectFit: 'cover' }}
+                    />
                   )}
                 </div>
               );

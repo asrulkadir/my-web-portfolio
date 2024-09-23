@@ -111,4 +111,28 @@ export const dataPortfolio: IPortfolioData[] = [
       },
     ],
   },
+  {
+    id: 5,
+    title: "Example Portfolio",
+    image: "https://res.cloudinary.com/dvqbaxtyr/image/upload/v1727097194/Asrul%27s%20Portfolio/yj8dmzoosvexjndv6uub.png",
+    site: "https://portfolio-example-as.netlify.app",
+    technologies: [
+      {
+        name: "React.js",
+        image: "https://reactjs.org/logo-og.png",
+        link: "https://reactjs.org",
+      },
+      {
+        name: "Tailwind CSS",
+        image: "https://styled-components.com/atom.png",
+        link: "https://styled-components.com/",
+      },
+      {
+        name: "Netlify",
+        image:
+          "https://pbs.twimg.com/profile_images/1413544188411482112/61xGHyIi_400x400.jpg",
+        link: "https://www.netlify.com/",
+      },
+    ],
+  },
 ];
