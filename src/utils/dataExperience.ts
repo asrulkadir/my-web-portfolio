@@ -5,7 +5,7 @@ export const dataExperience: IDataExperience[] = [
     Position: "Frontend Developer",
     Company: "Telkom Indonesia",
     StartDate: "Feb 2023",
-    EndDate: "Present",
+    EndDate: "Mar 2025",
     JobDescription: `Responsible for handling the Evomo platform by Telkom, one of the platforms from internal startup Telkom focused on solving problems in Industrial manufacturing with IoT (Internet of Things). 
     Develop, maintain, add features, and bug fixing OEE and EMS dashboard.`,
   },
@@ -13,7 +13,7 @@ export const dataExperience: IDataExperience[] = [
     Position: "Frontend Developer",
     Company: "Evomo",
     StartDate: "Feb 2022",
-    EndDate: "Present",
+    EndDate: "Mar 2025",
     JobDescription: `Developed, maintained, added features and bug fixing dashboard Evomo using Javascript, ReactJs, Redux, NextJS, Typescript, Zustand, TailwindCSS, and Ant Design. 
     Collaborate with Web Designer, Back End Engineer and QA Engineer , etc to develop and maintain the project.`,
   },
