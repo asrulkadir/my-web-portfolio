@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaMedium, FaWhatsapp } from "react-icons/fa";
 import { ProfilePicture, Background  } from "../../assets";
 import Nav from "../Nav";
 import { device } from "../../utils/responsive";
@@ -155,13 +155,13 @@ const Layout = ({ children }: { children: ReactNode }) => {
               >
                 <FaLinkedin size="2rem" />
               </a>
-              {/* <a
-              href="https://www.instagram.com/asrul_k/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <FaInstagram size="2rem" />
-            </a> */}
+              <a
+                href="https://asrulkadir.medium.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <FaMedium size="2rem" />
+              </a>
               <a
                 href="https://wa.me/6282238228544"
                 rel="noopener noreferrer"

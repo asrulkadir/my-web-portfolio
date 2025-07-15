@@ -71,7 +71,7 @@ const Resume = () => {
 
           <Education>
             <div className="wrap">
-              <div className="left"></div>
+              <div className="left" />
               <div className="right">
                 <div className="icon">
                   <MdWork size="3rem" />
@@ -88,7 +88,7 @@ const Resume = () => {
                     </p>
                   </div>
                   <div className="right">
-                    <div className="dot"></div>
+                    <div className="dot" />
                     <div className="desc">
                       <h3>
                         {item.Position} / {item.Company}
