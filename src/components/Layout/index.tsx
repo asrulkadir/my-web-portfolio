@@ -138,7 +138,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
             <img src={ProfilePicture} alt="" />
             <Name>
               <h3>ASRUL KADIR</h3>
-              <p>Frontend Developer | Full Stack Developer</p>
+              <p>Frontend Engineer | Full Stack Engineer</p>
             </Name>
             <div>
               <a
