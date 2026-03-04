@@ -186,7 +186,7 @@ const Profile = () => {
               <p>
                 <GrMail /> Email
               </p>
-              <p>asrulkadir.asus4@gmail.com</p>
+              <p>me@asrulkadir.com</p>
             </ItemAbout>
             <ItemAbout>
               <p>

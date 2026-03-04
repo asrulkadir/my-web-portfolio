@@ -5,6 +5,7 @@ import { ProfilePicture, Background  } from "../../assets";
 import Nav from "../Nav";
 import { device } from "../../utils/responsive";
 import { colors } from "../../utils/color";
+import { IoMdMail } from "react-icons/io";
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -168,6 +169,13 @@ const Layout = ({ children }: { children: ReactNode }) => {
                 target="_blank"
               >
                 <FaWhatsapp size="2rem" />
+              </a>
+              <a
+                href="mailto:me@asrulkadir.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <IoMdMail size="2rem" />
               </a>
             </div>
           </ProfileWrapper>

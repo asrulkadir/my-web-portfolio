@@ -39,7 +39,7 @@ const Contact = () => {
           <Kab>Kabupaten Pinrang - Sulawesi Selatan, Indonesia</Kab>
           <p>Desa Polewali Kecamatan Suppa Kabupaten Pinrang</p>
           <p className="pos">91273</p>
-          <p>+62 822 3822 8544 | asrulkadir.asus4@gmail.com</p>
+          <p>+62 822 3822 8544 | me@asrulkadir.com</p>
         </Address>
       </AnimatedPage>
     </Layout>

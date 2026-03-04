@@ -78,7 +78,7 @@ const Home = () => {
           I stay enthusiastic about learning new technologies and constantly work to improve my skills.
           </p>
           <h4>+62 822-3822-8544</h4>
-          <p>asrulkadir.asus4@gmail.com</p>
+          <p>me@asrulkadir.com</p>
 
           <div>
             <ButtonView onClick={() => setIsView(true)}>
