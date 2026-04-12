@@ -1,31 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import AnimatedPage from '../../components/Animated';
 import MapComponent from '../../components/GoogleMap';
 import Layout from '../../components/Layout';
 import { Title } from '../profile';
-
-const Kab = styled.p`
-  font-weight: Bold;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 2.5rem 0;
-`;
-
-const Address = styled.div`
-  margin: 1rem auto;
-  width: 90%;
-
-  p {
-    text-align: center;
-  }
-
-  .pos {
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-`;
 
 const Contact = () => {
   return (
@@ -35,12 +12,14 @@ const Contact = () => {
           <h3>MY CONTACT</h3>
         </Title>
         <MapComponent />
-        <Address>
-          <Kab>Kabupaten Pinrang - Sulawesi Selatan, Indonesia</Kab>
+        <div className="my-4 mx-auto w-[90%] [&_p]:text-center">
+          <p className="font-bold uppercase text-center my-10">
+            Kabupaten Pinrang - Sulawesi Selatan, Indonesia
+          </p>
           <p>Desa Polewali Kecamatan Suppa Kabupaten Pinrang</p>
-          <p className="pos">91273</p>
+          <p className="font-bold text-center mb-12">91273</p>
           <p>+62 822 3822 8544 | me@asrulkadir.com</p>
-        </Address>
+        </div>
       </AnimatedPage>
     </Layout>
   );

@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import {
-  // FaCalendar,
   FaCode,
   FaGlobeAsia,
   FaGraduationCap,
@@ -11,196 +10,70 @@ import { GrMail } from 'react-icons/gr';
 import { ImLocation2 } from 'react-icons/im';
 import { BiMoviePlay } from 'react-icons/bi';
 import { IoMdFootball } from 'react-icons/io';
-import styled from 'styled-components';
 import AnimatedPage from '../../components/Animated';
 import Layout from '../../components/Layout';
-import { device } from '../../utils/responsive';
-import { colors } from '../../utils/color';
 
-const ProfileWrapper = styled.div`
-  width: 80%;
-  margin: auto;
+export const Title = ({ children }: { children: ReactNode }) => (
+  <div className="border-b-2 border-primary w-1/2 mx-auto my-6 md:max-lg:w-2/5 max-md:w-1/2 [&_h3]:text-center [&_h3]:pb-4">
+    {children}
+  </div>
+);
 
-  @media ${device.mobile} {
-    width: 95%;
-  }
-`;
-
-export const Title = styled.div`
-  border-bottom: 2px solid ${colors.primary};
-  width: 50%;
-  margin: 1.5rem auto;
-
-  h3 {
-    text-align: center;
-    padding-bottom: 1rem;
-  }
-
-  @media ${device.tablet} {
-    width: 40%;
-  }
-
-  @media ${device.mobile} {
-    width: 50%;
-  }
-`;
-
-const About = styled.div`
-  display: flex;
-  width: 80%;
-  margin: auto;
-  flex-direction: column;
-
-  @media ${device.mobile} {
-    width: 95%;
-  }
-
-  @media ${device.tablet} {
-    width: 95%;
-  }
-`;
-
-const ItemAbout = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0.5rem;
-`;
-
-export const Education = styled.div`
-  .wrap {
-    display: flex;
-  }
-
-  .left {
-    width: 30%;
-    padding-right: 1rem;
-    padding-bottom: 1rem;
-
-    p {
-      font-weight: bold;
-      text-align: end;
+export const Education = ({ children }: { children: ReactNode }) => (
+  <div
+    className={
+      "[&_.wrap]:flex " +
+      "[&_.left]:w-[30%] [&_.left]:pr-4 [&_.left]:pb-4 [&_.left_p]:font-bold [&_.left_p]:text-end " +
+      "[&_.right]:w-[70%] [&_.right]:border-l-[3px] [&_.right]:border-primary [&_.right]:pl-8 [&_.right]:pb-4 " +
+      "[&_.right_.icon]:w-16 [&_.right_.icon]:h-16 [&_.right_.icon]:rounded-full [&_.right_.icon]:bg-primary [&_.right_.icon]:text-black [&_.right_.icon]:flex [&_.right_.icon]:justify-center [&_.right_.icon]:items-center [&_.right_.icon]:mb-8 [&_.right_.icon]:-ml-16 " +
+      "[&_.right_.dot]:w-4 [&_.right_.dot]:h-4 [&_.right_.dot]:bg-primary [&_.right_.dot]:rounded-full [&_.right_.dot]:mt-1 [&_.right_.dot]:-ml-[2.55rem] " +
+      "[&_.right_.desc]:-mt-5 [&_.right_.desc_h3]:mb-4"
     }
-  }
-
-  .right {
-    width: 70%;
-    border-left: 3px solid ${colors.primary};
-    padding-left: 2rem;
-    padding-bottom: 1rem;
-
-    .icon {
-      width: 4rem;
-      height: 4rem;
-      border-radius: 50%;
-      background: ${colors.primary};
-      color: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 2rem;
-      margin-left: -4rem;
-    }
-
-    .dot {
-      width: 1rem;
-      height: 1rem;
-      background: ${colors.primary};
-      border-radius: 50%;
-      margin: 0.25rem 0 0 -2.55rem;
-    }
-
-    .desc {
-      margin-top: -1.25rem;
-
-      h3 {
-        margin-bottom: 1rem;
-      }
-    }
-  }
-`;
-
-const Hobbies = styled.div`
-  p {
-    text-align: center;
-  }
-
-  .icon {
-    display: flex;
-    justify-content: space-around;
-
-    @media ${device.mobile} {
-      flex-wrap: wrap;
-    }
-
-    div {
-      width: 10%;
-      margin: 1rem 0;
-
-      @media ${device.tablet} {
-        width: 30%;
-      }
-
-      @media ${device.mobile} {
-        width: 30%;
-      }
-
-      h3 {
-        text-align: center;
-      }
-    }
-
-    p {
-      text-align: center;
-    }
-  }
-`;
+  >
+    {children}
+  </div>
+);
 
 const Profile = () => {
   return (
     <Layout>
       <AnimatedPage>
-        <ProfileWrapper>
+        <div className="w-4/5 mx-auto max-md:w-[95%]">
           <Title>
             <h3>ABOUT ME</h3>
           </Title>
-          <About>
-            <ItemAbout>
-              <p>
+          <div className="flex flex-col w-4/5 mx-auto max-md:w-[95%] md:max-lg:w-[95%]">
+            <div className="flex justify-between items-center mt-2">
+              <p className="flex items-center gap-2">
                 <FaUser /> Name
               </p>
               <p>Asrul Kadir</p>
-            </ItemAbout>
-            {/* <ItemAbout>
-              <p>
-                <FaCalendar /> Date of Birth
-              </p>
-              <p>April 19th 1998</p>
-            </ItemAbout> */}
-            <ItemAbout>
-              <p>
+            </div>
+            <div className="flex justify-between items-center mt-2">
+              <p className="flex items-center gap-2">
                 <FaPhone /> Phone
               </p>
               <p>+62 822-3822-8544</p>
-            </ItemAbout>
-            <ItemAbout>
-              <p>
+            </div>
+            <div className="flex justify-between items-center mt-2">
+              <p className="flex items-center gap-2">
                 <GrMail /> Email
               </p>
               <p>me@asrulkadir.com</p>
-            </ItemAbout>
-            <ItemAbout>
-              <p>
+            </div>
+            <div className="flex justify-between items-center mt-2">
+              <p className="flex items-center gap-2">
                 <FaGlobeAsia /> Web
               </p>
               <p>asrulkadir.com</p>
-            </ItemAbout>
-            <ItemAbout>
-              <p>
+            </div>
+            <div className="flex justify-between items-center mt-2">
+              <p className="flex items-center gap-2">
                 <ImLocation2 /> Address
               </p>
               <p>South Sulawesi, Indonesia</p>
-            </ItemAbout>
-          </About>
+            </div>
+          </div>
 
           <Title>
             <h3>MY EDUCATION</h3>
@@ -253,36 +126,36 @@ const Profile = () => {
           <Title>
             <h3>MY HOBBIES</h3>
           </Title>
-          <Hobbies>
+          <div className="[&>p]:text-center">
             <p>
               My hobby is coding, I learned programming because I love coding
               and it&apos;s my passion, I also enjoy watching action movies or
               animes, and sometimes enjoy playing footbal or futsal.
             </p>
-            <div className="icon">
-              <div>
-                <p>
+            <div className="flex justify-around max-md:flex-wrap">
+              <div className="w-[10%] my-4 md:max-lg:w-[30%] max-md:w-[30%]">
+                <p className="flex justify-center">
                   <FaCode size="2rem" />
                 </p>
-                <h3>Coding</h3>
+                <h3 className="text-center">Coding</h3>
               </div>
 
-              <div>
-                <p>
+              <div className="w-[10%] my-4 md:max-lg:w-[30%] max-md:w-[30%]">
+                <p className="flex justify-center">
                   <BiMoviePlay size="2rem" />
                 </p>
-                <h3>Movies</h3>
+                <h3 className="text-center">Movies</h3>
               </div>
 
-              <div>
-                <p>
+              <div className="w-[10%] my-4 md:max-lg:w-[30%] max-md:w-[30%]">
+                <p className="flex justify-center">
                   <IoMdFootball size="2rem" />
                 </p>
-                <h3>Football</h3>
+                <h3 className="text-center">Football</h3>
               </div>
             </div>
-          </Hobbies>
-        </ProfileWrapper>
+          </div>
+        </div>
       </AnimatedPage>
     </Layout>
   );

@@ -1,140 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import styled from 'styled-components';
 import { dataPortfolio } from '../../../utils/dataPortfolio';
-import { device } from '../../../utils/responsive';
 import NotFound from '../../404';
 import { Title } from '../../profile';
-import { colors } from '../../../utils/color';
 import { Tag, TagWrapper } from '../../../components/Styled/Tag';
-
-const Container = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  background: ${colors.primary};
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-`;
-
-const Wrapper = styled.div`
-  width: 80vw;
-  background: white;
-  color: ${colors.primary};
-  margin: 2rem auto;
-
-  @media ${device.tablet} {
-    width: 90vw;
-  }
-
-  @media ${device.mobile} {
-    width: 95vw;
-    margin: 1rem auto;
-  }
-
-  hr {
-    border: 1px solid blue;
-    width: 80%;
-    margin: auto;
-  }
-
-  img {
-    display: block;
-    width: 90%;
-    margin: auto;
-  }
-`;
-
-// const Technology = styled.div`
-//   width: 90%;
-//   margin: auto;
-//   display: flex;
-//   justify-content: space-evenly;
-//   flex-wrap: wrap;
-
-//   div {
-//     width: 20%;
-//     height: 10rem;
-
-//     @media ${device.tablet} {
-//       width: 25%;
-//     }
-
-//     @media ${device.mobile} {
-//       width: 45%;
-//       height: 7.5rem;
-//       margin: 0.5rem 0;
-//     }
-
-//     img {
-//       width: 100%;
-//       height: 80%;
-
-//       @media ${device.tablet} {
-//         height: 50%;
-//       }
-
-//       @media ${device.mobile} {
-//         height: 75%;
-//       }
-//     }
-
-//     p {
-//       text-align: center;
-//       a {
-//         color: ${colors.primary};
-//         text-decoration: none;
-//       }
-
-//       a:hover {
-//         text-decoration: underline;
-//       }
-//     }
-//   }
-// `;
-
-const View = styled.a`
-  width: 20%;
-  color: ${colors.primary};
-  border: 1px solid ${colors.primary};
-  margin: 1rem auto;
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.5rem;
-
-  @media ${device.tablet} {
-    margin: 0.25rem auto;
-  }
-
-  @media ${device.mobile} {
-    width: 50%;
-    margin: 0 auto;
-  }
-
-  &:hover {
-    background: ${colors.primary};
-    color: white;
-    transition: 0.5s ease all;
-  }
-`;
-
-const Back = styled.button`
-  padding: 0.25rem;
-  border: none;
-  background: ${colors.primary};
-  color: white;
-  margin: 2rem auto;
-  display: block;
-  cursor: pointer;
-
-  &:hover {
-    padding: 0.5rem;
-    transition: 0.25s ease all;
-    margin: 2rem auto 1.5rem;
-  }
-`;
 
 const DetailPortfolio = () => {
   const [showPortfolio, setShowPortfolio] = useState<boolean>(true);
@@ -148,11 +17,11 @@ const DetailPortfolio = () => {
         return li.id === parsedId;
       })
     );
-  }, [id, navigate]);
+  }, [id, navigate, parsedId]);
 
   return (
-    <Container>
-      <Wrapper>
+    <div className="w-full min-h-screen bg-primary flex justify-center flex-col">
+      <div className="w-[80vw] bg-white text-primary my-8 mx-auto md:max-lg:w-[90vw] max-md:w-[95vw] max-md:my-4 [&_hr]:border [&_hr]:border-blue-500 [&_hr]:w-4/5 [&_hr]:mx-auto [&_img]:block [&_img]:w-[90%] [&_img]:mx-auto">
         {showPortfolio ? (
           dataPortfolio.map((li, index) => {
             if (li.id === parsedId) {
@@ -166,43 +35,32 @@ const DetailPortfolio = () => {
                   <Title>
                     <h3>Built With</h3>
                   </Title>
-                  {/* <Technology>
+                  <TagWrapper>
                     {li.technologies.map((tech, index) => {
                       return (
-                        <div key={index}>
-                          <img src={tech.image} alt={tech.name} />
-                          <p>
-                            <a
-                              href={tech.link}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              {tech.name}
-                            </a>
-                          </p>
-                        </div>
+                        <Tag key={index}>
+                          {tech.name}
+                        </Tag>
                       );
                     })}
-                  </Technology> */}
-                  <TagWrapper>
-                    {
-                      li.technologies.map((tech, index) => {
-                        return (
-                          <Tag key={index}>
-                            {tech.name}
-                          </Tag>
-                        );
-                      })
-                    }
                   </TagWrapper>
 
-                  {
-                    li.site && 
-                    <View href={li.site} target="_blank">
+                  {li.site && (
+                    <a
+                      href={li.site}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-1/5 text-primary border border-primary my-4 mx-auto block text-center no-underline font-bold p-2 md:max-lg:my-1 max-md:w-1/2 max-md:mx-auto hover:bg-primary hover:text-white transition-all duration-500"
+                    >
                       View Portfolio
-                    </View>
-                  }
-                  <Back onClick={() => navigate(-1)}>Back</Back>
+                    </a>
+                  )}
+                  <button
+                    className="p-1 border-none bg-primary text-white my-8 mx-auto block cursor-pointer hover:p-2 hover:transition-all hover:duration-300"
+                    onClick={() => navigate(-1)}
+                  >
+                    Back
+                  </button>
                 </div>
               );
             } else {
@@ -212,8 +70,8 @@ const DetailPortfolio = () => {
         ) : (
           <NotFound />
         )}
-      </Wrapper>
-    </Container>
+      </div>
+    </div>
   );
 };
 

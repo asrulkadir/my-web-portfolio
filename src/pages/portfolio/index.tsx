@@ -1,65 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 import AnimatedPage from '../../components/Animated';
 import Layout from '../../components/Layout';
 import { dataPortfolio } from '../../utils/dataPortfolio';
-import { device } from '../../utils/responsive';
 import { Title } from '../profile';
-import { colors } from '../../utils/color';
-
-const PortfolioWrapper = styled.div`
-  width: 80%;
-  margin: auto;
-`;
-
-const PortfolioDiv = styled.div`
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-
-  @media ${device.tablet} {
-    grid-template-columns: 50% 50%;
-  }
-
-  @media ${device.mobile} {
-    grid-template-columns: 100%;
-  }
-
-  .port {
-    width: 100%;
-    border: 1px solid ${colors.primary};
-    cursor: pointer;
-    height: 20vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    @media ${device.tablet} {
-      height: 10vh;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-    }
-
-    h4 {
-      text-align: center;
-      opacity: 0;
-      color: white;
-    }
-  }
-
-  .port:hover {
-    background: ${colors.primary};
-    transition: 0.5s ease-in-out all;
-
-    h4 {
-      opacity: 1;
-    }
-  }
-`;
 
 const Portfolio = () => {
   const [hover, setHover] = useState<number>(0);
@@ -76,17 +20,17 @@ const Portfolio = () => {
   return (
     <Layout>
       <AnimatedPage>
-        <PortfolioWrapper>
+        <div className="w-4/5 mx-auto">
           <Title>
             <h3>MY PERSONAL PORTFOLIO</h3>
           </Title>
 
-          <PortfolioDiv>
+          <div className="grid grid-cols-[33%_33%_33%] md:max-lg:grid-cols-[50%_50%] max-md:grid-cols-[100%]">
             {dataPortfolio.map((li) => {
               return (
                 <div
                   key={li.id}
-                  className="port"
+                  className="w-full border border-primary cursor-pointer h-[20vh] flex flex-col justify-center items-center md:max-lg:h-[10vh] hover:bg-primary transition-all duration-500 group"
                   onMouseOver={() => handleMouseOver(li.id)}
                   onFocus={() => handleMouseOver(li.id)}
                   onMouseLeave={() => handleMouseLeave()}
@@ -95,19 +39,19 @@ const Portfolio = () => {
                   tabIndex={0}
                 >
                   {hover === li.id ? (
-                    <h4>{li.title}</h4>
+                    <h4 className="text-center text-white opacity-100">{li.title}</h4>
                   ) : (
-                    <img 
-                      src={li.image} 
+                    <img
+                      src={li.image}
                       alt={li.title}
-                      style={{ objectFit: 'cover' }}
+                      className="w-full h-full object-cover"
                     />
                   )}
                 </div>
               );
             })}
-          </PortfolioDiv>
-        </PortfolioWrapper>
+          </div>
+        </div>
       </AnimatedPage>
     </Layout>
   );

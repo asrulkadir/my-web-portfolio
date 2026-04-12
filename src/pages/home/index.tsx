@@ -1,72 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
 import AnimatedPage from "../../components/Animated";
 import Layout from "../../components/Layout";
-import { device } from "../../utils/responsive";
-import { colors } from "../../utils/color";
-
-const HomeWrapper = styled.div`
-  width: 80%;
-  margin: auto;
-
-  @media ${device.mobile} {
-    width: 95%;
-  }
-
-  h3,
-  h4,
-  h1,
-  hr {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  p {
-    text-align: center;
-  }
-`;
-
-const ButtonView = styled.button`
-  display: block;
-  height: 2rem;
-  width: 10rem;
-  border: 2px solid ${colors.primary};
-  margin: 1rem auto;
-  text-align: center;
-  text-decoration: none;
-  color: ${colors.primary};
-  font-weight: bold;
-  cursor: pointer;
-  background-color: ${colors.background};
-
-  &:hover {
-    background: ${colors.primary};
-    transition: 0.5s ease all;
-    color: white;
-  }
-`;
-
-const ModalIFrame = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-`;
-
-const LinkDownload = styled(Link)`
-  text-decoration: none;
-`
 
 const Home = () => {
   const [isView, setIsView] = useState(false);
   return (
     <Layout>
       <AnimatedPage>
-        <HomeWrapper>
+        <div className="w-4/5 mx-auto max-md:w-[95%] [&_h3]:text-center [&_h3]:mt-8 [&_h4]:text-center [&_h4]:mt-8 [&_h1]:text-center [&_h1]:mt-8 [&_hr]:text-center [&_hr]:mt-8 [&_p]:text-center">
           <h3>Hello, I am</h3>
           <h1>ASRUL KADIR</h1>
           <h4>FRONTEND ENGINEER | FULL STACK ENGINEER</h4>
@@ -81,33 +23,40 @@ const Home = () => {
           <p>me@asrulkadir.com</p>
 
           <div>
-            <ButtonView onClick={() => setIsView(true)}>
-              View My CV
-            </ButtonView>
-            <LinkDownload
-              to="./Asrul_Kadir.pdf" 
-              target="_blank" 
-              download
+            <button
+              className="block h-8 w-40 border-2 border-primary mx-auto my-4 text-center no-underline text-primary font-bold cursor-pointer bg-app-bg hover:bg-primary hover:text-white transition-all duration-500"
+              onClick={() => setIsView(true)}
             >
-              <ButtonView>
-                  Download My CV
-              </ButtonView>
-            </LinkDownload>
+              View My CV
+            </button>
+            <Link
+              to="./Asrul_Kadir.pdf"
+              target="_blank"
+              download
+              className="no-underline"
+            >
+              <button className="block h-8 w-40 border-2 border-primary mx-auto my-4 text-center no-underline text-primary font-bold cursor-pointer bg-app-bg hover:bg-primary hover:text-white transition-all duration-500">
+                Download My CV
+              </button>
+            </Link>
           </div>
           {isView && (
-            <ModalIFrame>
-              <ButtonView onClick={() => setIsView(false)}>
+            <div className="fixed top-0 left-0 z-[1000] w-full h-full bg-black/50">
+              <button
+                className="block h-8 w-40 border-2 border-primary mx-auto my-4 text-center no-underline text-primary font-bold cursor-pointer bg-app-bg hover:bg-primary hover:text-white transition-all duration-500"
+                onClick={() => setIsView(false)}
+              >
                 Close
-              </ButtonView>
+              </button>
               <iframe
                 src="./Asrul_Kadir.pdf"
                 width="100%"
                 height="90%"
                 title="Asrul Kadir CV"
               />
-            </ModalIFrame>
+            </div>
           )}
-        </HomeWrapper>
+        </div>
       </AnimatedPage>
     </Layout>
   );

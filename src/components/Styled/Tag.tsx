@@ -1,17 +1,13 @@
-import styled from "styled-components";
-import { colors } from "../../utils/color";
+import React, { ReactNode } from "react";
 
-export const Tag = styled.div`
-  border: 2px solid ${colors.primary};
-  padding: 0.25rem;
-  border-radius: 5px;
-  color: ${colors.primary};
-`
+export const Tag = ({ children }: { children: ReactNode }) => (
+  <div className="border-2 border-primary p-1 rounded-[5px] text-primary">
+    {children}
+  </div>
+);
 
-export const TagWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-  margin-bottom: 1rem;
-`
+export const TagWrapper = ({ children }: { children: ReactNode }) => (
+  <div className="flex justify-center flex-wrap gap-1 mb-4">
+    {children}
+  </div>
+);

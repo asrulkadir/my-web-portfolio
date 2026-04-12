@@ -5,112 +5,75 @@ import { IoMdDocument } from 'react-icons/io';
 import { ImLocation2 } from 'react-icons/im';
 import { MdWork } from 'react-icons/md';
 import { useLocation, useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-import { device } from '../../utils/responsive';
-import { colors } from '../../utils/color';
 
-const Navigation = styled.div`
-  display: flex;
-  background: ${colors.nav};
+interface NavItemProps {
+  active: boolean;
+  onClick: () => void;
+  label: string;
+  icon: React.ReactNode;
+}
 
-  @media ${device.mobile} {
-    width: 95vw;
-  }
-`;
-
-const Item = styled.div<{ param: boolean }>`
-  padding: 1rem;
-  width: 20%;
-  cursor: pointer;
-  background: ${(props) => (props.param ? colors.background : colors.nav)};
-
-  @media ${device.tablet} {
-    padding: 1rem 0.25rem;
-  }
-
-  @media ${device.mobile} {
-    display: flex;
-    justify-content: center;
-  }
-
-  p {
-    text-align: center;
-    color: ${(props) => (props.param ? colors.primary : 'black')};
-    font-weight: ${(props) => (props.param ? 'bold' : 'normal')};
-
-    @media ${device.mobile} {
-      display: none;
-    }
-  }
-
-  .icon {
-    text-align: center;
-    color: ${(props) => (props.param ? colors.primary : 'black')};
-    font-weight: ${(props) => (props.param ? 'bold' : 'normal')};
-    display: none;
-
-    @media ${device.mobile} {
-      display: inline;
-    }
-  }
-
-  &:hover {
-    background: ${(props) => (props.param ? colors.background : 'grey')};
-  }
-`;
+const NavItem = ({ active, onClick, label, icon }: NavItemProps) => (
+  <div
+    className={`p-4 w-1/5 cursor-pointer md:max-lg:px-1 md:max-lg:py-4 max-md:flex max-md:justify-center ${
+      active ? 'bg-app-bg' : 'bg-app-nav hover:bg-gray-500'
+    }`}
+    onClick={onClick}
+  >
+    <p
+      className={`text-center max-md:hidden ${
+        active ? 'text-primary font-bold' : 'text-black'
+      }`}
+    >
+      {label}
+    </p>
+    <p
+      className={`text-center hidden max-md:inline ${
+        active ? 'text-primary font-bold' : 'text-black'
+      }`}
+    >
+      {icon}
+    </p>
+  </div>
+);
 
 const Nav = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
   return (
-    <Navigation>
-      <Item
-        param={pathname === '/'}
+    <div className="flex bg-app-nav max-md:w-[95vw]">
+      <NavItem
+        active={pathname === '/'}
         onClick={() => navigate('/')}
-      >
-        <p>HOME</p>
-        <p className="icon">
-          <FaHome />
-        </p>
-      </Item>
-      <Item
-        param={pathname === '/profile'}
+        label="HOME"
+        icon={<FaHome />}
+      />
+      <NavItem
+        active={pathname === '/profile'}
         onClick={() => navigate('/profile')}
-      >
-        <p>PROFILE</p>
-        <p className="icon">
-          <GoPerson />
-        </p>
-      </Item>
-      <Item
-        param={pathname === '/resume'}
+        label="PROFILE"
+        icon={<GoPerson />}
+      />
+      <NavItem
+        active={pathname === '/resume'}
         onClick={() => navigate('/resume')}
-      >
-        <p>RESUME</p>
-        <p className="icon">
-          <IoMdDocument />
-        </p>
-      </Item>
-      <Item
-        param={pathname === '/portfolio'}
+        label="RESUME"
+        icon={<IoMdDocument />}
+      />
+      <NavItem
+        active={pathname === '/portfolio'}
         onClick={() => navigate('/portfolio')}
-      >
-        <p>PORTFOLIO</p>
-        <p className="icon">
-          <MdWork />
-        </p>
-      </Item>
-      <Item
-        param={pathname === '/contact'}
+        label="PORTFOLIO"
+        icon={<MdWork />}
+      />
+      <NavItem
+        active={pathname === '/contact'}
         onClick={() => navigate('/contact')}
-      >
-        <p>CONTACT</p>
-        <p className="icon">
-          <ImLocation2 />
-        </p>
-      </Item>
-    </Navigation>
+        label="CONTACT"
+        icon={<ImLocation2 />}
+      />
+    </div>
   );
 };
 
