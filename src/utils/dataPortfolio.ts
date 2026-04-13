@@ -135,4 +135,38 @@ export const dataPortfolio: IPortfolioData[] = [
       },
     ],
   },
-];
+  {
+    id: 6,
+    title: "Expense Tracker",
+    image: "https://res.cloudinary.com/dvqbaxtyr/image/upload/v1776071264/Screenshot_2026-04-13_at_18.06.02_befvqb.png",
+    site: "https://expense-tracker.asrulkadir.com",
+    technologies: [
+      {
+        name: "React.js",
+        image: "https://reactjs.org/logo-og.png",
+        link: "https://reactjs.org",
+      },
+      {
+        name: "Tailwind CSS",
+        image: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.6d5b1b6b.svg",
+        link: "https://tailwindcss.com/",
+      },
+      {
+        name: "NestJS",
+        image:
+          "https://nestjs.com/img/logo-small.svg",
+        link: "https://nestjs.com/",
+      },
+      {
+        name: "MongoDB",
+        image: "https://infinapps.com/wp-content/uploads/2018/10/mongodb-logo.png",
+        link: "https://www.mongodb.com/",
+      },
+      {
+        name: "Docker",
+        image: "https://www.docker.com/sites/default/files/d8/2019-07/Moby-logo.png",
+        link: "https://www.docker.com/",
+      }
+    ],
+  },
+].reverse();
