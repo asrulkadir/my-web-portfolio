@@ -1,4 +1,5 @@
 export interface IDataExperience {
+  id: number;
   Position: string;
   Company: string;
   StartDate: string;

@@ -26,9 +26,9 @@ const Resume = () => {
               </div>
             </div>
 
-            {dataExperience.map((item, index) => {
+            {dataExperience.map((item) => {
               return (
-                <div className="wrap" key={index}>
+                <div className="wrap" key={item.id}>
                   <div className="left">
                     <p>
                       {item.StartDate} - {item.EndDate}
