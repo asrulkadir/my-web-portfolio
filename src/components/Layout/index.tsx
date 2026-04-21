@@ -1,8 +1,7 @@
 import React, { ReactNode } from "react";
-import { FaGithub, FaLinkedin, FaMedium, FaWhatsapp } from "react-icons/fa";
 import { ProfilePicture, Background } from "../../assets";
 import Nav from "../Nav";
-import { IoMdMail } from "react-icons/io";
+import { dataSocialMedia } from "../../utils/dataSocialMedia";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
@@ -23,46 +22,18 @@ const Layout = ({ children }: { children: ReactNode }) => {
               <p>Frontend Engineer | Full Stack Engineer</p>
             </div>
             <div className="flex justify-around w-full mt-4 max-md:mb-4 max-md:mt-0">
-              <a
-                href="https://github.com/asrulkadir"
-                rel="noopener noreferrer"
-                target="_blank"
-                className="text-white"
-              >
-                <FaGithub size="2rem" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/asrulkadir"
-                rel="noopener noreferrer"
-                target="_blank"
-                className="text-white"
-              >
-                <FaLinkedin size="2rem" />
-              </a>
-              <a
-                href="https://asrulkadir.medium.com"
-                rel="noopener noreferrer"
-                target="_blank"
-                className="text-white"
-              >
-                <FaMedium size="2rem" />
-              </a>
-              <a
-                href="https://wa.me/6282238228544"
-                rel="noopener noreferrer"
-                target="_blank"
-                className="text-white"
-              >
-                <FaWhatsapp size="2rem" />
-              </a>
-              <a
-                href="mailto:me@asrulkadir.com"
-                rel="noopener noreferrer"
-                target="_blank"
-                className="text-white"
-              >
-                <IoMdMail size="2rem" />
-              </a>
+              {dataSocialMedia.map(({ id, href, icon: Icon, label }) => (
+                <a
+                  key={id}
+                  href={href}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-white"
+                  aria-label={label}
+                >
+                  <Icon size="2rem" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
